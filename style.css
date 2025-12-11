@@ -11,7 +11,6 @@ body {
   color: #111;
 }
 
-/* mehr Abstand zum Bildschirmrand */
 .page {
   position: relative;
   z-index: 10;
@@ -24,30 +23,44 @@ body {
 
 .art-band {
   position: absolute;
-  top: 0;
+  top: 16px;              /* Abstand zum oberen Rand → dunkler Background sichtbar */
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;              /* so breit wie der Bildschirm */
-  height: 200px;             /* Höhe des „Bildstreifens“ – ggf. anpassen */
-  background-image: url("art/rex-artwork.jpg");
-  background-size: cover;
-  background-position: center top;
-  z-index: 0;                /* unter der Karte */
-  pointer-events: none;
+  width: 420px;           /* feste Breite, z.B. 380–440px ausprobieren */
+  z-index: 0;             /* unter der Karte */
+  pointer-events: none;   /* Bild blockiert keine Klicks */
 }
 
-/* Karte wirkt etwas kleiner, luftiger */
+.art-band img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent 10%,
+      black 15%
+    ),
+    radial-gradient(
+      ellipse at center,
+      black 70%,
+      transparent 80%
+    );
+  mask-composite: intersect;  
+}
+
 .card {
   position: relative;
   z-index: 1;
   max-width: 360px;
   width: 100%;
-  /* Hintergrund rausnehmen, damit das Bild dahinter sichtbar sein kann */
   background: linear-gradient(
     to bottom,
-    rgba(240, 234, 220, 0.0) 22%,   /* ganz oben vollständig transparent */
-    rgba(240, 234, 220, 0.16) 24%,  /* leicht sichtbar */
-    rgba(240, 234, 220, 0.96) 27%, /* ab hier fast voll deckend */
+    rgba(240, 234, 220, 0.0) 22%,
+    rgba(240, 234, 220, 0.16) 24%,
+    rgba(240, 234, 220, 0.96) 27%,
     rgba(240, 234, 220, 0.96) 100%
   );
   border-radius: 18px;
@@ -61,17 +74,15 @@ body {
   background: transparent;
 }
 
-/* Namebar & Typeline liegen über Bild + Fade */
 .card-namebar,
 .card-typeline {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% - 40px);
-  z-index: 2; /* über dem Fade */
+  z-index: 2;
 }
 
-/* Namebar */
 .card-namebar {
   top: 10px;
   display: flex;
@@ -95,7 +106,6 @@ body {
   font-size: 1.02rem;
 }
 
-/* Manasymbole */
 .card-mana {
   display: flex;
   gap: 4px;
@@ -113,7 +123,6 @@ body {
   font-size: 0.8rem;
 }
 
-/* Typzeile */
 .card-typeline {
   bottom: 10px;
   padding: 4px 10px;
@@ -129,12 +138,10 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.45);
 }
 
-/* Körper der Karte mit hellem Hintergrund */
 .card-body {
   background: rgba(240, 234, 220, 0.96);
 }
 
-/* Textbox */
 .card-textbox {
   padding: 0 12px 12px;
   display: flex;
@@ -155,7 +162,6 @@ body {
   font-weight: 700;
 }
 
-/* Scrollbereich für Zusatzfähigkeiten */
 .abilities-scroll {
   margin-top: 6px;
   padding-top: 6px;
