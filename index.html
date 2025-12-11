@@ -7,15 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="page-background"></div>
+
   <div class="page">
     <div class="card">
+      <div class="card-art-overlay">
 
-      <!-- Artwork-Bereich mit schwebenden Overlays -->
-      <div class="card-art">
-        <!-- Pfad an dein Bild anpassen -->
-        <img src="art/rex-artwork.jpg" alt="Rex, Cyber-Hound Artwork">
-
-        <!-- Name + Mana-Kosten schweben über dem Bild -->
         <header class="card-namebar">
           <div class="card-name">Rex, Cyber-Hound</div>
           <div class="card-mana">
@@ -25,74 +22,72 @@
           </div>
         </header>
 
-        <!-- Typzeile schwebt am unteren Bildrand -->
-        <div class="card-typeline">
-          Legendary Artifact Creature — Robot Dog
-        </div>
+        <div class="card-typeline">Legendary Artifact Creature — Robot Dog</div>
       </div>
+      
+      <div class="card-body">
+        <section class="card-textbox">
 
-      <!-- Textbox mit Regeln + Zusatzfähigkeiten -->
-      <section class="card-textbox">
+          <div class="rules-text">
+            <p>
+              Whenever Rex, Cyber-Hound deals combat damage to a player, they mill two cards and you get <span class="symbol">⚡⚡</span>.
+            </p>
+            <p>
+              Pay <span class="symbol">⚡⚡</span>: Choose target creature card in a graveyard. Exile it with a brain counter on it. Activate only as a sorcery.
+            </p>
+            <p>
+              Rex has all activated abilities of all cards in exile with brain counters on them.
+            </p>
+          </div>
 
-        <div class="rules-text">
-          <p>
-            Whenever Rex, Cyber-Hound deals combat damage to a player, they mill two cards and you get <span class="symbol">⚡⚡</span>.
-          </p>
-          <p>
-            Pay <span class="symbol">⚡⚡</span>: Choose target creature card in a graveyard. Exile it with a brain counter on it. Activate only as a sorcery.
-          </p>
-          <p>
-            Rex has all activated abilities of all cards in exile with brain counters on them.
-          </p>
-        </div>
-
-        <div class="abilities-scroll">
-          <h2 class="textbox-heading">Aktive Zusatzfähigkeiten</h2>
-          <div class="abilities-list">
-            <div class="ability ability--active">
-              <span class="ability-cost">b:</span>
-              <span class="ability-text">untap this creature</span>
+          <div class="abilities-scroll">
+            <h2 class="textbox-heading">Aktive Zusatzfähigkeiten</h2>
+            <div class="abilities-list">
+              <div class="ability ability--active">
+                <span class="ability-cost">b:</span>
+                <span class="ability-text">untap this creature</span>
+              </div>
+              <div class="ability ability--active">
+                <span class="ability-cost">b:</span>
+                <span class="ability-text">this creature gains flying until end of turn</span>
+              </div>
+              <div class="ability ability--active">
+                <span class="ability-cost">b:</span>
+                <span class="ability-text">this creature cannot be the target of spells</span>
+              </div>
             </div>
-            <div class="ability ability--active">
-              <span class="ability-cost">b:</span>
-              <span class="ability-text">this creature gains flying until end of turn</span>
-            </div>
-            <div class="ability ability--active">
-              <span class="ability-cost">b:</span>
-              <span class="ability-text">this creature cannot be the target of spells</span>
+
+            <h2 class="textbox-heading">Noch nicht freigeschaltet</h2>
+            <div class="abilities-list">
+              <div class="ability ability--inactive">
+                <span class="ability-cost">1:</span>
+                <span class="ability-text">this creature gains +1 / -1 until end of turn</span>
+              </div>
+              <div class="ability ability--inactive">
+                <span class="ability-cost">1:</span>
+                <span class="ability-text">this creature gains -1 / +1 until end of turn</span>
+              </div>
+              <div class="ability ability--inactive">
+                <span class="ability-cost">t:</span>
+                <span class="ability-text">you get an energy counter</span>
+              </div>
+              <div class="ability ability--inactive">
+                <span class="ability-cost">t:</span>
+                <span class="ability-text">draw three cards</span>
+              </div>
+              <div class="ability ability--inactive">
+                <span class="ability-cost">t:</span>
+                <span class="ability-text">cast target artifact card from your graveyard</span>
+              </div>
+              <div class="ability ability--inactive">
+                <span class="ability-cost">t:</span>
+                <span class="ability-text">draw a card then discard a card</span>
+              </div>
             </div>
           </div>
 
-          <h2 class="textbox-heading">Noch nicht freigeschaltet</h2>
-          <div class="abilities-list">
-            <div class="ability ability--inactive">
-              <span class="ability-cost">1:</span>
-              <span class="ability-text">this creature gains +1 / -1 until end of turn</span>
-            </div>
-            <div class="ability ability--inactive">
-              <span class="ability-cost">1:</span>
-              <span class="ability-text">this creature gains -1 / +1 until end of turn</span>
-            </div>
-            <div class="ability ability--inactive">
-              <span class="ability-cost">t:</span>
-              <span class="ability-text">you get an energy counter</span>
-            </div>
-            <div class="ability ability--inactive">
-              <span class="ability-cost">t:</span>
-              <span class="ability-text">draw three cards</span>
-            </div>
-            <div class="ability ability--inactive">
-              <span class="ability-cost">t:</span>
-              <span class="ability-text">cast target artifact card from your graveyard</span>
-            </div>
-            <div class="ability ability--inactive">
-              <span class="ability-cost">t:</span>
-              <span class="ability-text">draw a card then discard a card</span>
-            </div>
-          </div>
-        </div>
-
-      </section>
+        </section>
+      </div>
     </div>
   </div>
 </body>
