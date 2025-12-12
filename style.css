@@ -16,19 +16,19 @@ body {
   z-index: 10;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
-  padding: 24px;
+  padding: 10px;
 }
 
 .art-band {
   position: absolute;
-  top: 16px;              /* Abstand zum oberen Rand → dunkler Background sichtbar */
+  top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 420px;           /* feste Breite, z.B. 380–440px ausprobieren */
-  z-index: 0;             /* unter der Karte */
-  pointer-events: none;   /* Bild blockiert keine Klicks */
+  width: 420px;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .art-band img {
@@ -40,29 +40,28 @@ body {
   mask-image:
     linear-gradient(
       to bottom,
-      transparent 10%,
-      black 15%
+      transparent 5%,
+      black 10%
     ),
     radial-gradient(
       ellipse at center,
-      black 70%,
-      transparent 80%
+      black 80%,
+      transparent 85%
     );
   mask-composite: intersect;  
+}
+
+.card-shell {
+  position: relative;
+  max-width: 360px;
+  width: 100%;
 }
 
 .card {
   position: relative;
   z-index: 1;
-  max-width: 360px;
+  max-width: none;
   width: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(240, 234, 220, 0.0) 22%,
-    rgba(240, 234, 220, 0.16) 24%,
-    rgba(240, 234, 220, 0.96) 27%,
-    rgba(240, 234, 220, 0.96) 100%
-  );
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 0 22px rgba(0,0,0,0.7);
@@ -70,7 +69,7 @@ body {
 
 .card-art-overlay {
   position: relative;
-  height: 200px; /* Höhe des „unsichtbaren Bildbereichs“ der Karte */
+  height: 280px;
   background: transparent;
 }
 
@@ -79,8 +78,8 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 40px);
-  z-index: 2;
+  width: calc(100% + 20px);
+  z-index: 5;
 }
 
 .card-namebar {
@@ -88,7 +87,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 10px;
+  padding: 4px 10px;
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.8);
 
@@ -102,8 +101,9 @@ body {
 }
 
 .card-name {
-  font-weight: 700;
-  font-size: 1.02rem;
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  font-size: 1.32rem;
 }
 
 .card-mana {
@@ -124,7 +124,10 @@ body {
 }
 
 .card-typeline {
-  bottom: 10px;
+  font-family: "Libre Baskerville", serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  top: 260px;
   padding: 4px 10px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.85);
@@ -143,14 +146,16 @@ body {
 }
 
 .card-textbox {
-  padding: 0 12px 12px;
+  padding: 12px 12px 12px;
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.rules-text {
-  font-size: 0.86rem;
+.rules-text,
+.ability {
+  font-family: "EB Garamond", serif;
+  font-size: 0.9rem;
   line-height: 1.35;
 }
 
@@ -216,8 +221,13 @@ body {
   opacity: 0.9;
 }
 
+.card-meta {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 0.65rem;
+}
+
 @media (min-width: 480px) {
   .page {
-    align-items: center;
+    align-items: flex-start;
   }
 }
